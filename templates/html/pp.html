@@ -1,0 +1,22 @@
+{% extends 'html/base.html' %}
+{% block body_block %}
+
+<div class="jumbotron">
+<b><h2>{{ user.username }}</h2></b>
+<br><br>
+{{ user.userprofileinfo.status }}
+<br><br>
+<h3>Email:</h3> {{ user.email }}
+<br><br>
+
+<h3>Social Handle:</h3> {{ user.userprofileinfo.portfolio_site }}
+<br><br>
+
+<h3>Description:</h3> {{ user.userprofileinfo.desc }}
+<br><br>
+
+<h3>Profile Picture:</h3> <img src="{{ user.userprofileinfo.profilepic.url|default_if_none:'#' }}"/>
+
+</div>
+
+{% endblock %}
